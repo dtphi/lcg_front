@@ -1,11 +1,19 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Tran chủ</router-link> |
-    <router-link to="/about">Giới thiệu</router-link>
-  </div>
-  <router-view/>
+   <AppLayout></AppLayout>
 </template>
+<script>
+// @ is an alias to /src
+import  {mapGetters}  from  'vuex'
+import AppLayout from '@/components/Layouts/App'
 
+export default {
+  name: 'App',
+  components: {AppLayout},
+  computed: {
+    ...mapGetters(['cfApp'])
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -13,18 +21,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

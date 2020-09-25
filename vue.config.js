@@ -13,5 +13,6 @@ module.exports = {
       args[0].title = 'Lịch Công Giáo';
       return args;
     });
+    //config.resolve.symlinks(false)
   }
 };
